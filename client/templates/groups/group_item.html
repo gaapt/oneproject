@@ -1,0 +1,16 @@
+<template name="groupItem">
+	<div class="group-item">
+		
+		<div class="content">
+			<span class="title">
+				<a href="{{pathFor 'groupPage'}}">{{title}}</a>
+			</span>
+			<span class="meta">Added by {{author}} • {{displayFormat submitted}} • {{todosCount}} Todos • {{commentCount}} Comments</span>
+		</div>
+		
+		<div class="extra">
+			<a href="{{pathFor 'groupEdit'}}" class="btn btn-off-white btn-sm">Edit</a>
+		</div>
+
+	</div>
+</template>

@@ -1,0 +1,13 @@
+<template name="todosList">
+
+	<header>
+		<h1>Your Projects</h1>
+	</header>
+
+	<section class="todos">
+		{{#each todos}}
+			{{> todoItem}}
+		{{/each}}
+	</section>
+
+</template>

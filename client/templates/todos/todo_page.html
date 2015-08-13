@@ -1,0 +1,26 @@
+<template name="todoPage">
+	<div class="todo-page">
+		{{> todoItem}}
+
+		<div class="panel panel-default">
+			<div class="panel-heading"><strong>Description &amp; Comments</strong></div>
+
+			<div class="panel-body">
+				<p>{{description}}</p>
+			</div>
+
+			<ul class="list-group">
+				{{#each comments}}
+					{{> commentItem}}
+				{{/each}}
+			</ul>
+		</div>
+
+		{{#if currentUser}}
+			<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseCommentSubmit" aria-expanded="false" aria-controls="collapseCommentSubmit">Add a Comment</button>
+			<div class="collapse" id="collapseCommentSubmit">{{> commentSubmit}}</div>
+		{{else}}
+			<p>Please log in to leave a comment.</p>
+		{{/if}}
+	</div>
+</template>

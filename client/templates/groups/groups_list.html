@@ -1,0 +1,11 @@
+<template name="groupsList">
+	<section class="groups">
+		<header>
+			<h1>Todos Groups</h1>
+		</header>
+
+		{{#each groups}}
+			{{> groupItem}}
+		{{/each}}
+	</section>
+</template>

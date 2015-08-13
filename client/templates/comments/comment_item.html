@@ -1,0 +1,9 @@
+<template name="commentItem">
+	<li class="list-group-item">
+		<p class="list-group-item-text">{{body}}</p>
+		<p class="list-group-item-text">
+			<span class="author">{{isItMe author}}</span>
+			<span class="submitted">{{displayFormat submitted}}</span>
+		</p>
+	</li>
+</template>

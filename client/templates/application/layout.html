@@ -1,0 +1,15 @@
+<template name="layout">
+	
+	{{> meteorErrors}}
+			
+	<div id="main-nav">
+		{{> mainNav}}
+	</div>
+
+	<div id="main-content-hldr">
+		<div id="main-content">
+			{{> yield}}
+		</div>
+	</div>
+
+</template>

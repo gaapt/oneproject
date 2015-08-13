@@ -1,0 +1,100 @@
+<template name="mainNav">
+
+	<div class="page-brand">
+		<span class="glyphicon glyphicon-fire"></span>
+		<p><strong>Nice</strong> Projects</p>
+	</div>
+
+	<ul class="nav nav-pills nav-stacked">
+
+		{{#if currentUser}}
+			<li class="dropdown">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+					<i class="fa fa-user"></i> User
+					<b class="caret"></b>
+				</a>
+				<ul class="dropdown-menu">
+					<li><a href="{{pathFor 'profile'}}">Profile</a></li>
+					<!-- <li><a href="{{pathFor 'profile'}}">Edit Profile</a></li> -->
+					{{#if isInRole 'super-admin'}}
+						<li><a href="{{pathFor 'manageUsers'}}">Manage Users</a></li>
+					{{/if}}
+					<li>
+						<a href="#" class="signout">
+							<span class="glyphicon glyphicon-log-out"></span> Sign Out
+						</a>
+					</li>
+				</ul>
+			</li>
+
+			<li class="dropdown">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+					<i class="fa fa-inbox"></i> Projects <span class="badge">{{currentUser.profile.todosCount}}</span>
+					<b class="caret"></b>
+				</a>
+				<ul class="dropdown-menu">
+					<li>
+						<a href="{{pathFor 'todosList'}}">Assigned Projects <span class="badge">{{currentUser.profile.todosCount}}</span></a>
+					</li>
+					<li>
+						<a href="{{pathFor 'todoSubmit'}}">
+							<i class="fa fa-plus"></i> Add a Project
+						</a>
+					</li>
+				</ul>
+			</li>
+
+			<li class="dropdown">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+					<i class="fa fa-tags"></i> Teams
+					<b class="caret"></b>
+				</a>
+				<ul class="dropdown-menu">
+					<li>
+						<a href="{{pathFor 'groupsList'}}">
+							<i class="fa fa-tags"></i> All Teams
+						</a>
+					</li>
+					<li>
+						<a href="{{pathFor 'groupSubmit'}}">
+							<i class="fa fa-plus"></i> Add a Team
+						</a>
+					</li>
+				</ul>
+			</li>
+
+			<li><a href="{{pathFor 'usersList'}}"><i class="fa fa-users"></i> Coworkers</a></li>
+
+			<li class="dropdown">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+					<i class="fa fa-briefcase"></i> Customers
+					<b class="caret"></b>
+				</a>
+				<ul class="dropdown-menu">
+					<li>
+						<a href="{{pathFor 'clientsList'}}">
+							<i class="fa fa-briefcase"></i> All Customers
+						</a>
+					</li>
+					<li>
+						<a href="{{pathFor 'clientSubmit'}}">
+							<i class="fa fa-plus"></i> Add a Customer
+						</a>
+					</li>
+				</ul>
+			</li>
+
+			{{> notifications}}
+
+		{{else}}
+
+			<li>
+				<a href="{{pathFor 'signIn'}}">
+					<span class="glyphicon glyphicon-log-in"></span> Sign In
+				</a>
+			</li>
+
+		{{/if}}
+	</ul>
+
+</template>

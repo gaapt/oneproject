@@ -1,0 +1,28 @@
+<template name="todoItem">
+	<div class="todo-item checked-{{checked}}">
+
+		<div class="checkbox-hldr">
+			<input type="checkbox" name="todoCheck" checked="{{checked}}">
+		</div>
+
+		<div class="content">
+
+			<span class="title">
+				<a href="{{pathFor 'todoPage'}}">{{title}}</a>
+
+				<span class="slash-group">/</span>
+				<a href="{{pathFor 'groupPage' _id=groupId }}" class="group">{{group}}</a>
+
+				<span class="slash-user">/</span>
+				<a href="{{pathFor 'todosList'}}" class="user">{{isItMe user}}</a>
+			</span>
+
+			<span class="meta">{{displayFormat duedate}} • {{commentCount}} Comments • Created by {{isItMe author}}</span>
+		</div>
+
+		<div class="extra">
+			<a href="{{pathFor 'todoEdit'}}" class="btn btn-off-white btn-sm" {{editAttr}}>Edit</a>
+		</div>
+
+	</div>
+</template>

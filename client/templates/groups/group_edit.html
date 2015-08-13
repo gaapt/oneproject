@@ -1,0 +1,37 @@
+<template name="groupEdit">
+	<header>
+		<h1>Edit this Group</h1>
+	</header>
+
+
+	<form action="" class="main form">
+		
+		<div class="form-group {{errorClass 'title'}}">
+			<label class="control-label" for="title">Title</label>
+			<div class="controls">
+				<input name="title" id="title" type="text" value="{{title}}" placeholder="Group" class="form-control"/>
+				<span class="help-block">{{errorMessage 'title'}}</span>
+			</div>
+		</div>
+		
+		<div class="form-group {{errorClass 'duedate'}}">
+			<label for="duedate" class="control-label">Due Date</label>
+			<div class="controls">
+				<input name="duedate" id="duedate" type="text" value="" placeholder="Enter the Due Date" class="form-control"/>
+				<span class="help-block">{{errorMessage 'duedate'}}</span>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label for="decription" class="control-label">Description</label>
+			<textarea name="description" id="description" class="form-control" rows="5">{{description}}</textarea>
+		</div>
+		
+		<hr>
+
+		<div class="form-group">
+			<input type="submit" value="Submit" class="btn btn-primary"/>&emsp;<button class="btn btn-danger">Delete</button>&emsp;<a href="{{pathFor 'groupPage'}}" class="btn btn-off-white">Cancel</a>
+		</div>
+
+	</form>
+</template>

@@ -1,0 +1,44 @@
+<template name="groupPage">
+	<div class="group-page">
+
+		<header>
+			<h1>{{title}}</h1>
+			<h2 class="meta">Created by {{isItMe author}} • {{displayFormat submitted}} • {{todosCount}} Todos • {{commentCount}} Comments • <a href="{{pathFor 'groupEdit'}}">Edit</a></h2>
+		</header>
+
+		<div class="group-todos">
+			<div class="todo-list">
+				{{#each todos}}
+					{{> todoItem}}
+				{{/each}}
+			</div>
+
+			<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseTodosSubmit" aria-expanded="false" aria-controls="collapseTodosSubmit">Add Todos</button>
+			<div class="collapse" id="collapseTodosSubmit">{{> todoGroupSubmit}}</div>
+		</div>
+
+		<div class="group-info">
+			<div class="panel panel-default">
+				<div class="panel-heading"><strong>Description &amp; Comments</strong></div>
+
+				<div class="panel-body">
+					<p>{{description}}</p>
+				</div>
+
+				<ul class="list-group">
+					{{#each comments}}
+						{{> commentItem}}
+					{{/each}}
+				</ul>
+			</div>
+
+			{{#if currentUser}}
+				<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseCommentSubmit" aria-expanded="false" aria-controls="collapseCommentSubmit">Add a Comment</button>
+				<div class="collapse" id="collapseCommentSubmit">{{> commentSubmit}}</div>
+			{{else}}
+				<p>Please log in to leave a comment.</p>
+			{{/if}}
+		</div>
+
+	</div>
+</template>

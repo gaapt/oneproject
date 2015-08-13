@@ -1,0 +1,28 @@
+<template name="usersList">
+
+	<header>
+		<h1>Coworkers</h1>
+	</header>
+
+	<div class="users">
+		{{#each users}}
+			{{> user}}
+		{{/each}}
+	</div>
+
+</template>
+
+
+<template name="user">
+	<div class="user">
+		<div class="profile-img">
+			<img src="{{profile.avatar}}" alt="{{profile.name}}" class="img-circle">
+		</div>
+
+		<div class="profile-header">
+			<h2>{{profile.name}}</h2>
+			<span class="username">@{{username}}</span>
+			<!-- <p><a href="" class="btn btn-off-white">View Projects</a></p> -->
+		</div>
+	</div>
+</template>
