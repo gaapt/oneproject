@@ -52,7 +52,7 @@ if (Todos.find().count() === 0) {
 
 	// create groups
 	var groupOneId = Groups.insert({
-		title: 'Jobs for Morning Time',
+		title: 'Jobs for Tomorrow',
 		userId: matt._id,
 		author: matt.profile.name,
 		description: "Modo typi qui nunc nobis videntur parum clari fiant sollemnes in. Vel eum iriure dolor in hendrerit in vulputate.",
@@ -62,7 +62,7 @@ if (Todos.find().count() === 0) {
 	});
 
 	Groups.insert({
-		title: 'Switch Todos',
+		title: 'Switch Project',
 		userId: kelsey._id,
 		author: kelsey.profile.name,
 		description: "Modo typi qui nunc nobis videntur parum clari fiant sollemnes in. Vel eum iriure dolor in hendrerit in vulputate.",
@@ -81,7 +81,7 @@ if (Todos.find().count() === 0) {
 		userId: matt._id,
 		user: matt.profile.name,
 		groupId: groupOneId,
-		group: 'Jobs for Morning Time',
+		group: 'Jobs for Tomorrow',
 		submitted: new Date(now - 5 * 3600 * 1000),
 		duedate: new Date(now + 8 * 3600 * 1000),
 		description: "Est notare quam littera gothica quam nunc putamus parum claram. Per seacula quarta decima et quinta decima eodem modo? Nostrud exerci tation ullamcorper suscipit lobortis nisl ut. Est usus legentis in, iis qui facit eorum claritatem Investigationes demonstraverunt lectores legere me!",
@@ -121,7 +121,7 @@ if (Todos.find().count() === 0) {
 		userId: matt._id,
 		user: matt.profile.name,
 		groupId: groupOneId,
-		group: 'Jobs for Morning Time',
+		group: 'Jobs for Someday',
 		submitted: new Date(now - 5 * 3600 * 1000),
 		duedate: new Date(now + 9 * 3600 * 1000),
 		description: "Est notare quam littera gothica quam nunc putamus parum claram. Per seacula quarta decima et quinta decima eodem modo? Nostrud exerci tation ullamcorper suscipit lobortis nisl ut. Est usus legentis in, iis qui facit eorum claritatem Investigationes demonstraverunt lectores legere me!",
@@ -136,7 +136,7 @@ if (Todos.find().count() === 0) {
 		userId: matt._id,
 		user: matt.profile.name,
 		groupId: groupOneId,
-		group: 'Jobs for Morning Time',
+		group: 'Jobs for One',
 		submitted: new Date(now - 5 * 3600 * 1000),
 		duedate: new Date(now + 10 * 3600 * 1000),
 		description: "Est notare quam littera gothica quam nunc putamus parum claram. Per seacula quarta decima et quinta decima eodem modo? Nostrud exerci tation ullamcorper suscipit lobortis nisl ut. Est usus legentis in, iis qui facit eorum claritatem Investigationes demonstraverunt lectores legere me!",
